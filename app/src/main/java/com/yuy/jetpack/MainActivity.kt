@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.dp
 import com.yuy.jetpack.compose.ComposeLesson1Activity
 import com.yuy.jetpack.datastore.PreferencesDemoActivity
 import com.yuy.jetpack.viewbinding.ViewBindingTestActivity
+import com.yuy.jetpack.ztemp.ConfigChangesActivity
 
 class MainActivity : ComponentActivity() {
 
@@ -34,11 +35,23 @@ class MainActivity : ComponentActivity() {
                     Text(text = "PreferenceDemo")
                 }
 
+                Box(modifier = Modifier.padding(all = 4.dp))
+
                 Button(onClick = {
                     startActivity(Intent(this@MainActivity, ViewBindingTestActivity::class.java))
                 }) {
                     Text(text = "ViewBindingDemo")
                 }
+
+                Box(modifier = Modifier.padding(all = 4.dp))
+
+                Button(onClick = {
+                    startActivity(Intent(this@MainActivity, ConfigChangesActivity::class.java))
+                }) {
+                    Text(text = "ConfigChangesActivity")
+                }
+
+                Box(modifier = Modifier.padding(all = 4.dp))
             }
         }
 

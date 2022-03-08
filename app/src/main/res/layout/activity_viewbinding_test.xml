@@ -5,6 +5,22 @@
 
     <data>
 
+        <import type="com.yuy.jetpack.viewbinding.User" />
+
+        <import type="com.yuy.jetpack.utils.DatabingAdapterUtil" />
+
+        <variable
+            name="isError"
+            type="Boolean" />
+
+        <variable
+            name="utils"
+            type="DatabingAdapterUtil" />
+
+        <variable
+            name="user"
+            type="User" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,9 +47,22 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@color/design_default_color_primary_variant"
+            android:onClick="setBtnClick"
             android:text="按钮"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textColor="#DD55DD"
+            android:textSize="20sp"
+            android:text="@{user.firstName}"
+            app:layout_constraintStart_toEndOf="@id/btn_click"
+            app:layout_constraintTop_toTopOf="@id/btn_click"
+            tools:text="用户" />
 
         <ViewStub
             android:id="@+id/vs_test2"
@@ -44,6 +73,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_click"
             tools:visibility="visible" />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@{isError ? @color/black : @color/white}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vs_test2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

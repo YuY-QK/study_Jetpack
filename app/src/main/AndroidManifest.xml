@@ -23,6 +23,9 @@
         <activity android:name=".compose.ComposeLesson1Activity" />
         <activity android:name=".datastore.PreferencesDemoActivity" />
         <activity android:name=".viewbinding.ViewBindingTestActivity" />
+        <activity
+            android:name=".ztemp.ConfigChangesActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
     </application>
 
 </manifest>

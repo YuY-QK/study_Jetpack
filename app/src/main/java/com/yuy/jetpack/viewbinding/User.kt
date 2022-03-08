@@ -5,10 +5,10 @@ import androidx.databinding.Bindable
 import com.yuy.jetpack.BR
 
 /**
- * Created by yu on 2022/3/2.
+ * Created by yu on 2022/3/8.
  *
  */
-class User : BaseObservable() {
+class User: BaseObservable() {
 
     @get:Bindable
     var firstName: String = ""
@@ -16,12 +16,4 @@ class User : BaseObservable() {
             field = value
             notifyPropertyChanged(BR.firstName)
         }
-
-    @get:Bindable
-    var lastName: String = ""
-        set(value) {
-            field = value
-            notifyPropertyChanged(BR.lastName)
-        }
-
 }
