@@ -50,7 +50,7 @@ class ViewBindingTestActivity: AppCompatActivity() {
     fun setBtnClick(view: View) {
         Log.e("TAG", "=======>setBtnClick")
         binding.isError = true
-
+        binding.paddingleft = 100
         binding.user = User().apply {
             this.firstName = "张三哟哟"
         }

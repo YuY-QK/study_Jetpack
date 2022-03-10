@@ -16,5 +16,15 @@ object DatabingAdapterUtil {
     @JvmStatic
     fun convertColorToDrawable(color: Int) = ColorDrawable(color)
 
+    @BindingAdapter("android:paddingLeft")
+    @JvmStatic
+    fun setPaddingLeft(view: View, oldPadding: Int, newPadding: Int) {
+        if (oldPadding != newPadding) {
+            view.setPadding(10,
+                view.getPaddingTop(),
+                view.getPaddingRight(),
+                view.getPaddingBottom())
+        }
+    }
 
 }

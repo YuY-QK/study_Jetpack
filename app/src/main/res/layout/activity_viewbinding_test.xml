@@ -7,6 +7,8 @@
 
         <import type="com.yuy.jetpack.viewbinding.User" />
 
+        <import type="com.yuy.jetpack.R" />
+
         <import type="com.yuy.jetpack.utils.DatabingAdapterUtil" />
 
         <variable
@@ -20,6 +22,10 @@
         <variable
             name="user"
             type="User" />
+
+        <variable
+            name="paddingleft"
+            type="Integer" />
 
     </data>
 
@@ -56,18 +62,29 @@
             android:id="@+id/tv_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:paddingLeft="@{paddingleft}"
+            android:text="@{user.firstName}"
             android:textColor="#DD55DD"
             android:textSize="20sp"
-            android:text="@{user.firstName}"
             app:layout_constraintStart_toEndOf="@id/btn_click"
             app:layout_constraintTop_toTopOf="@id/btn_click"
             tools:text="用户" />
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@{isError ? @color/yellow : @android:color/black}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:srcCompat="@{isError ? R.drawable.ic_person_black_96dp : R.drawable.ic_whatshot_black_96dp }"
+            tools:ignore="UseAppTint" />
 
         <ViewStub
             android:id="@+id/vs_test2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout="@layout/layout_viewbind_test2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
